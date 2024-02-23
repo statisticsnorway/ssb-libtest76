@@ -5,6 +5,25 @@ https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 
 """
 
+from math import sqrt
+
+
+def is_prime(number: int) -> bool:
+    """Check if the given number is a prime number.
+
+    Args:
+        number: The number to check.
+
+    Returns:
+        True if the number is a prime number. False otherwise.
+    """
+    if number <= 1:
+        return False
+    for i in range(2, int(sqrt(number)) + 1):
+        if number % i == 0:
+            return False
+    return True
+
 
 def example_function(number1: int, number2: int) -> str:
     """Compare two integers.
